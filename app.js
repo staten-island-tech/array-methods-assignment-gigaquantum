@@ -10,18 +10,30 @@ const arr = [
   },
 ];
 
-arr.forEach(object => {
-  console.log(object.name);
-});
+function arrNames() {
+  console.log("Array Names:")
+  arr.forEach(object => {
+    console.log(object.name);
+  });
+}
 
-arr.forEach(object => {
+function arrNumbers() {
+  console.log("Array Numbers:")
+  arr.forEach(object => {
   object.numbers.forEach(numArr => {
     console.log(numArr);
   });
 });
+}
 
-const newArr = arr.filter(object => {
-  object.float.value > 5;
-});
+function arrFilter() {
+  const filteredArr = arr.filter(object => {
+    return object.float > 5
+  });
+  console.log("Filtered Array:");
+  console.log(filteredArr);
+}
 
-console.log(newArr);
+arrNames();
+arrNumbers();
+arrFilter();
